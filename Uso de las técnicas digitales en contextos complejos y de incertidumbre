@@ -1,0 +1,111 @@
+# Actualizar el archivo HTML para incluir el botón adicional "Presentación Genially"
+html_content_updated = """
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos: Pedagogías Emergentes y Lenguajes Multimodales</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #800020;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Estilo de los botones hexagonales */
+        .hex-button {
+            position: relative;
+            width: 160px;
+            height: 69.28px;
+            background-color: #800020;
+            color: white;
+            text-align: center;
+            line-height: 69.28px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+
+        .hex-button:hover {
+            transform: scale(1.1);
+            background-color: #a00028;
+        }
+
+        .hex-button:active {
+            transform: scale(1);
+            background-color: #600018;
+        }
+
+        /* Fondo con pentágonos */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('https://www.svgrepo.com/show/402509/pentagon.svg');
+            background-size: 200px;
+            background-repeat: repeat;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Proyectos: Pedagogías Emergentes y Lenguajes Multimodales</h1>
+    </header>
+
+    <div class="container">
+        <div class="button-container">
+            <div class="hex-button" onclick="window.location.href='https://websim.ai/p/q81_b81c5tim93b8tg7s/93'">
+                Presentación Gamificada
+            </div>
+            <div class="hex-button" onclick="window.location.href='https://youtube.com/playlist?list=PLrxC6wBPSUV4ZacqJjKvksyfr4J-6JEJT&si=J0TRjCjGPhvvM_gd'">
+                Videos
+            </div>
+            <div class="hex-button" onclick="window.location.href='https://app.genially.com/editor/6730e80ff1245ddb85084076'">
+                Presentación Genially
+            </div>
+            <div class="hex-button" onclick="location.href='#'">Por Venir</div>
+        </div>
+    </div>
+
+    <div class="background"></div>
+</body>
+</html>
+"""
+
+# Guardar el archivo actualizado
+updated_file_path = "/mnt/data/index_updated.html"
+
+with open(updated_file_path, "w") as file:
+    file.write(html_content_updated)
+
+updated_file_path
